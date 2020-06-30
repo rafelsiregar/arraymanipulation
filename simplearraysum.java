@@ -28,6 +28,25 @@ public class Solution {
         }
         return count;
     }
+    
+        // Complete the miniMaxSum function below.
+    static void miniMaxSum(int[] arr) {
+        long count = 0, max, min;
+        for(int i=0;i<arr.length;i++){
+            count += arr[i];
+        }
+        if(arr[0]>arr[1]){
+            max = arr[0];min=arr[1];
+        } else {
+            min = arr[0];max=arr[1];
+        }
+        for(int i=2;i<arr.length;i++){
+            if(arr[i]>max) max = arr[i];
+            else if(arr[i]<min) min=arr[i];
+        }
+
+        System.out.print((count-max)+" "+(count-min));
+    }
 
     private static final Scanner scanner = new Scanner(System.in);
 
