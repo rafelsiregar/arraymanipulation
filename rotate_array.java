@@ -1,14 +1,13 @@
 package cp;
 
 public class Example {
-	public static void leftRotate(int arr[], int k) 
-    { 
+//1st Algorithm : Rotate one by one	
+public static void leftRotate(int arr[], int k) { 
         for (int i = 0; i < k; i++) 
             leftRotatebyOne(arr); 
     } 
   
-    public static void leftRotatebyOne(int arr[]) 
-    { 
+    public static void leftRotatebyOne(int arr[]) { 
         int i, temp; 
         temp = arr[0]; 
         for (i = 0; i < arr.length - 1; i++) 
@@ -16,21 +15,19 @@ public class Example {
         arr[i] = temp; 
     }
     
-    public static void rightRotate(int arr[], int k) 
-    { 
+    public static void rightRotate(int arr[], int k) { 
         for (int i = 0; i < k; i++) 
             rightRotatebyOne(arr); 
     } 
     
-    public static void rightRotatebyOne(int arr[]) 
-    { 
+    public static void rightRotatebyOne(int arr[]) { 
         int i, temp; 
         temp = arr[arr.length-1]; 
         for (i = arr.length-1; i > 0; i--) 
             arr[i] = arr[i - 1]; 
         arr[0] = temp; 
     }
-	
+//2nd Algorithm : Using Cyclic Increment
     public static void right_rotate(int[] nums, int k) {
 	 k = k % nums.length;
 	 int element_rotated = 0;
@@ -81,7 +78,7 @@ public class Example {
 	        } while (start != current);
 	      }
 	    }
-	 
+	 //3rd Algorithm : Using Extra Space
 	 public static void right_rotate_with_adding(int[] a, int d) {
 	        int[] newArray = new int[a.length];
 
