@@ -19,6 +19,15 @@ public class Solution {
         }
         return count;
     }
+    
+        // Complete the aVeryBigSum function below.
+    static long aVeryBigSum(long[] ar) {
+        long count = 0;
+        for(int i=0;i<ar.length;i++){
+            count += ar[i];
+        }
+        return count;
+    }
 
     private static final Scanner scanner = new Scanner(System.in);
 
