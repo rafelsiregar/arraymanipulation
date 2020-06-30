@@ -30,11 +30,11 @@ public class Example {
             arr[i] = arr[i - 1]; 
         arr[0] = temp; 
     }
-    
-	 public static void right_rotate(int[] nums, int k) {
-	      k = k % nums.length;
-	      int element_rotated = 0;
-	      for (int start = 0; element_rotated < nums.length; start++) {
+	
+    public static void right_rotate(int[] nums, int k) {
+	 k = k % nums.length;
+	 int element_rotated = 0;
+	 for (int start = 0; element_rotated < nums.length; start++) {
 	        int current = start;
 	        int prev = nums[start]; //Masukkan nilai pada indeks awal
 	        do {
@@ -53,9 +53,9 @@ public class Example {
 	          element_rotated++;
 	        } while (start != current);
 	      }
-	    }
+	}
 	 
-	 public static void left_rotate(int[] nums, int k) {
+	public static void left_rotate(int[] nums, int k) {
 	      k = k % nums.length;
 	      int element_rotated = 0;
 	      for (int start = 0; element_rotated < nums.length; start++) {
@@ -87,10 +87,6 @@ public class Example {
 
 	        for (int i=0;i<a.length;i++){
 	            newArray[(i+d)%a.length] = a[i];
-	        }
-
-	        for(int i=0;i<a.length;i++){
-	            System.out.print(newArray[i]+" ");
 	        }
 	 }
 	 
