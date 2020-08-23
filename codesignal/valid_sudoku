@@ -1,0 +1,55 @@
+boolean sudoku(int[][] grid) {
+    return check_row(grid) && check_col(grid) && check_subgrid(grid);
+}
+
+//valid number of sudoku
+boolean valid_sudoku_number(int number){
+    return number>=1 && number<=9;
+}
+
+//check row
+boolean check_row(int[][] grid){
+    for(int i=0;i<grid.length;i++){
+        HashSet<Integer> number_set = new HashSet<>();
+        for(int j=0;j<grid[0].length;j++){
+            if(!number_set.contains(grid[i][j]) && valid_sudoku_number(grid[i][j])){
+                number_set.add(grid[i][j]);
+            } else return false;
+        }
+    }
+    return true;
+}
+
+//check col
+boolean check_col(int[][] grid){
+    for(int i=0;i<grid[0].length;i++){
+        HashSet<Integer> number_set = new HashSet<>();
+        for(int j=0;j<grid.length;j++){
+            if(!number_set.contains(grid[j][i]) && valid_sudoku_number(grid[j][i])){
+                number_set.add(grid[j][i]);
+            } else 
+                return false;
+        }
+    }
+    return true;
+}
+
+//check 3x3 grid
+boolean check_subgrid(int[][] grid){
+    //int row_counter =0, col_counter=0;
+    for(int row_counter=0;row_counter<9;row_counter+=3){
+        for(int col_counter=0;col_counter<9;col_counter+=3){
+            HashSet<Integer> number_set = new HashSet<>();
+            //Iterate through subgrid
+            for(int j=row_counter;j<row_counter+3;j++){
+                for(int k=col_counter;k<col_counter+3;k++){
+                    if(!number_set.contains(grid[j][k]) && valid_sudoku_number(grid[j][k])){
+                        number_set.add(grid[j][k]);
+                    } 
+                    else return false;
+                }
+            }
+        }
+    }
+    return true;
+}
